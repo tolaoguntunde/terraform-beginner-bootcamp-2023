@@ -10,11 +10,12 @@ The general format is ***MAJOR.MINOR.PATCH***, e.g `1.2.0`
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 > [click here for more](https://semver.org/)
 
-## Install Terafform CLI
+## Install Terraform CLI
 
 ### Workspace Lifecycle
 
 We need to be careful with init because it will not rerun if you restart the workspace
+[check here](https://www.gitpod.io/docs/configure/workspaces/tasks)
 
 ### Considerations for Terraform Installation 
 The terraform installation instructions changed, [gitpod.yml](.\.gitpod.yml) does not contain the updated gpg key
