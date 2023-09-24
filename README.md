@@ -33,3 +33,25 @@ https://en.wikipedia.org/wiki/Shebang_(Unix)
 For executing a script you can use `./path` and also set the file to executable using `chmod u+x FILE` e.g `chmod u+x .\bin\install_terraform_cli`
 
 https://en.wikipedia.org/wiki/Chmod
+
+### Working with Env Vars
+
+We can pass env in terminal e.g `export HELLO='World'`
+
+We can list out all environment variables using `env` command
+
+we can filter using `env |grep AWS`
+
+We can unset using `unser HELLO`
+
+We can print using `echo $HELLO`
+
+### Scoping ENV vars
+
+When you open new terminal, it will not be aware of the env in other opened terminal
+
+If you want to persist, you need to set it in your bashprofile i.e `bashrc`
+
+To set a non sensitive env in gitpod
+
+```gp env HELLO ='World' ```
