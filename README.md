@@ -55,3 +55,20 @@ If you want to persist, you need to set it in your bashprofile i.e `bashrc`
 To set a non sensitive env in gitpod
 
 ```gp env HELLO ='World' ```
+
+### AWS CLI Installation
+[Install AWS CLI DOCS](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+
+[set env for AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+Run the following command to confirm aws was configured correctly
+```aws sts get-caller-identity```
+
+if successful you will get this
+
+{
+    "UserId": "AIDAWS7OFMW7ZLGVV5UPR",
+    "Account": "453081654719",
+    "Arn": "arn:aws:iam::#########:user/terraform-bootcamp-user"
+}
