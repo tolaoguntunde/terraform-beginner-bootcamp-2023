@@ -72,3 +72,7 @@ if successful you will get this
     "Account": "453081654719",
     "Arn": "arn:aws:iam::#########:user/terraform-bootcamp-user"
 }
+
+created IAM USer and ADMIN group
+
+Assign ADMIN group to Terraform-bootcamp-user
