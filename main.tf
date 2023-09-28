@@ -7,6 +7,10 @@ terraform {
       source = "hashicorp/random"
       version = "3.5.1"
     }
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.18.1"
+    }
   }
 }
 
@@ -16,7 +20,16 @@ provider "random" {
 
 resource "random_string" "bucket_name" {
   length           = 16
+  upper            = false
   special          = false
+}
+
+resource "aws_s3_bucket" "example" {
+
+  #https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+  bucket = random_string.bucket_name.result
+
+
 }
 
 
