@@ -112,3 +112,8 @@ To autoapprove use `terraform apply --auto-approve`
 To manually generate api token, go to your user settings
 
 - https://app.terraform.io/app/settings/tokens
+
+### create Alias for terraform in ~/.bash_profile
+`alias tf="terraform"`
+ reload the bash_profile to accept the new change using the following
+ source ~/.bash_profile
