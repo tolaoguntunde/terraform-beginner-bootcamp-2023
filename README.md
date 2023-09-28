@@ -76,3 +76,30 @@ if successful you will get this
 created IAM USer and ADMIN group
 
 Assign ADMIN group to Terraform-bootcamp-user
+
+## Terraform Basics
+
+### Terraform Registry
+[Terrafrom registry](https://registry.terraform.io/)
+- **Providers** is an interface to APIs that will allow to create resources in terraform
+- **Modules**  are way to create templates for reuse of terraform codes
+
+### Terraform Console
+
+We can see a list of terraform commands by typing `terraform`
+
+#### Terraform init
+
+Use to initialize the working directory `terraform init`
+
+#### Terraform plan
+This will generate a change set `terraform plan`
+
+#### Terraform apply
+
+This will run the plan and apply the changeset `terraform apply`
+
+To autoapprove use `terraform apply --auto-approve`
+
+- `terraform.tfstate` contain information about the current state of your infrastructure
+- .terraform contains binary of terraform
