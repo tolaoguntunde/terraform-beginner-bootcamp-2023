@@ -2,6 +2,13 @@
 # This is my second commit
 #This is my third test
 terraform {
+  cloud {
+    organization = "serah-terraform"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
   required_providers {
     random = {
       source = "hashicorp/random"
