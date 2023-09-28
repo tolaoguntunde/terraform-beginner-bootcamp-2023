@@ -107,3 +107,8 @@ To autoapprove use `terraform apply --auto-approve`
 ### Terraform Destroy
 
 `Terraform destory` used to destroy a resource
+
+### Terraform Cloud
+To manually generate api token, go to your user settings
+
+- https://app.terraform.io/app/settings/tokens
