@@ -103,3 +103,7 @@ To autoapprove use `terraform apply --auto-approve`
 
 - `terraform.tfstate` contain information about the current state of your infrastructure
 - .terraform contains binary of terraform
+
+### Terraform Destroy
+
+`Terraform destory` used to destroy a resource
