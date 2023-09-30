@@ -1,5 +1,23 @@
-# Terraform Beginner Bootcamp 2023
-
+# Terraform Beginner Bootcamp 2023 
+  * [Semantic Versioning](#semantic-versioning)
+  * [Install Terraform CLI](#install-terraform-cli)
+    + [Workspace Lifecycle](#workspace-lifecycle)
+    + [Considerations for Terraform Installation](#considerations-for-terraform-installation)
+      - [Shebang](#shebang)
+    + [Working with Env Vars](#working-with-env-vars)
+    + [Scoping ENV vars](#scoping-env-vars)
+    + [AWS CLI Installation](#aws-cli-installation)
+  * [Terraform Basics](#terraform-basics)
+    + [Terraform Registry](#terraform-registry)
+    + [Terraform Console](#terraform-console)
+      - [Terraform init](#terraform-init)
+      - [Terraform plan](#terraform-plan)
+      - [Terraform apply](#terraform-apply)
+    + [Terraform Destroy](#terraform-destroy)
+    + [Terraform Cloud](#terraform-cloud)
+    + [create Alias for terraform in ~/.bash_profile](#create-alias-for-terraform-in---bash-profile)
+   
+  #### [Tool for generating TOC](https://ecotrust-canada.github.io/markdown-toc/)
 ## Semantic Versioning
 
 The general format is ***MAJOR.MINOR.PATCH***, e.g `1.2.0`
