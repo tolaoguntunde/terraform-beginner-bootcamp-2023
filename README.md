@@ -131,7 +131,69 @@ To manually generate api token, go to your user settings
 
 - https://app.terraform.io/app/settings/tokens
 
+``` bash vi  /home/gitpod/.terraform.d/credentials.tfrc.json```
+```
+credentials "app.terraform.io" {
+  token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
+}
+```
 ### create Alias for terraform in ~/.bash_profile
 `alias tf="terraform"`
  reload the bash_profile to accept the new change using the following
  source ~/.bash_profile
+
+### Root Module Structure
+
+Our root module structure is as follows
+- variables.tf
+- main.tf
+- providers.tf
+- output.tf
+- terraform.tfvars
+- ReadMe.md
+
+-[Click Here for More Info](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+
+### Terraform Cloud Variables
+
+In Terraform cloud, we can set two types of variable
+ - Environment variables
+ - Terraform Variables
+
+ ### Order of terraform variable
+
+ Environment Variables (Highest Priority):
+Variables defined as environment variables take the highest priority. You can prefix your variable names with TF_VAR_ to set them as environment variables. For example, if you have a variable named example_var, you can set it as an environment variable like this:
+
+```bash
+export TF_VAR_example_var="some_value"
+Environment variables override values from other sources.
+```
+
+Variable Definitions (Variable Files):
+Variables defined in .tfvars or .tfvars.json files take precedence over the following sources. You can explicitly specify variable values in these files. Variable files are usually named after the environment or purpose, like dev.tfvars, prod.tfvars, etc. You can apply these variable files using the -var-file option when running terraform apply or terraform plan.
+
+```bash
+terraform apply -var-file=dev.tfvars
+Values from variable files override default variable values.
+```
+Default Variable Values (Lowest Priority):
+Variables can have default values specified in the Terraform configuration. These default values are defined in your .tf files using the default parameter within a variable block.
+
+```hcl
+variable "example_var" {
+  description = "An example variable"
+  default     = "default_value"
+}
+```
+Default values are used only if no other source provides a value for the variable.
+
+Command Line Flags:
+You can use command line flags, like -var, to specify variables when running terraform apply or terraform plan. These flags will take precedence over default values but can be overridden by values from variable files and environment variables.
+
+```bash
+terraform apply -var="example_var=new_value"
+```
+The order of variable sources allows you to provide values at different levels of granularity, from environment-wide defaults down to specific variable values for a single command invocation. Terraform will use the value from the highest priority source it finds for each variable.
+
+It's important to carefully manage your variable sources to ensure that variables are appropriately set for your Terraform deployments while also maintaining flexibility for different environments and use cases.
