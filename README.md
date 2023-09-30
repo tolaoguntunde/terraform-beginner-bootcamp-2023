@@ -131,7 +131,25 @@ To manually generate api token, go to your user settings
 
 - https://app.terraform.io/app/settings/tokens
 
+``` bash vi  /home/gitpod/.terraform.d/credentials.tfrc.json```
+```
+credentials "app.terraform.io" {
+  token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
+}
+```
 ### create Alias for terraform in ~/.bash_profile
 `alias tf="terraform"`
  reload the bash_profile to accept the new change using the following
  source ~/.bash_profile
+
+### Root Module Structure
+
+Our root module structure is as follows
+- variables.tf
+- main.tf
+- providers.tf
+- output.tf
+- terraform.tfvars
+- ReadMe.md
+
+-[Click Here for More Info](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
