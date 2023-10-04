@@ -148,12 +148,18 @@ Our root module structure is as follows
 - variables.tf
 - main.tf
 - providers.tf
-- output.tf
+- outputs.tf
 - terraform.tfvars
 - ReadMe.md
 
--[Click Here for More Info](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+- [Click Here for More Info](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
 
+### Module structure
+- variables.tf
+- main.tf
+- outputs.tf
+-ReadMe.md
+- [Modules](https://developer.hashicorp.com/terraform/language/modules/sources)
 ### Terraform Cloud Variables
 
 In Terraform cloud, we can set two types of variable
