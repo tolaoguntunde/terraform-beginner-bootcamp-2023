@@ -203,3 +203,7 @@ terraform apply -var="example_var=new_value"
 The order of variable sources allows you to provide values at different levels of granularity, from environment-wide defaults down to specific variable values for a single command invocation. Terraform will use the value from the highest priority source it finds for each variable.
 
 It's important to carefully manage your variable sources to ensure that variables are appropriately set for your Terraform deployments while also maintaining flexibility for different environments and use cases.
+
+### useful links
+-[s3_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object)
+-  [path_variable](https://developer.hashicorp.com/terraform/language/expressions/references)
