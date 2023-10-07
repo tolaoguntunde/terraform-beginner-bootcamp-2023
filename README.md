@@ -131,9 +131,12 @@ To manually generate api token, go to your user settings
 
 - https://app.terraform.io/app/settings/tokens
 
-``` bash vi  /home/gitpod/.terraform.d/credentials.tfrc.json```
+```bash
+vi  /home/gitpod/.terraform.d/credentials.tfrc.json
 ```
-credentials "app.terraform.io" {
+
+``` 
+  credentials "app.terraform.io" {
   token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
 }
 ```
@@ -207,3 +210,15 @@ It's important to carefully manage your variable sources to ensure that variable
 ### useful links
 -[s3_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object)
 -  [path_variable](https://developer.hashicorp.com/terraform/language/expressions/references)
+    ```hcl
+      resource "aws_s3_object" "index_html" {
+        bucket = aws_s3_bucket.website_bucket.bucket
+        key    = "index.html"
+        source       = var.index_html_filepath
+        etag = filemd5(var.index_html_filepath)
+        # source = "${path.root}/public/index.html"
+    }
+    ```
+- [functions in Terraform](https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+Used etag to tag uploaded files for tracking
