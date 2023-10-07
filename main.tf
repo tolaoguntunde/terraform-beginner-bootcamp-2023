@@ -29,5 +29,5 @@ module "terrahouse_aws" {
   s3_bucket_name = var.s3_bucket_name
   index_html_filepath = var.index_html_filepath
   error_html_filepath = var.error_html_filepath
-
+  content_version = var.content_version
 }

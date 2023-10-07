@@ -230,3 +230,5 @@ Used etag to tag uploaded files for tracking
 ### Terraform Data Sources
 
 - [Data Sources](https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-sources)
+
+-[Resource Lifecyce](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
