@@ -1,11 +1,17 @@
 variable "user_uuid" {
+  type        = string
+}
 
+variable "s3_bucket_name" {
+  type        = string
+}
+
+variable "index_html_filepath" {
   type        = string
   
 }
 
-variable "s3_bucket_name" {
-  
+variable "error_html_filepath" {
   type        = string
-
+  
 }
