@@ -222,3 +222,11 @@ It's important to carefully manage your variable sources to ensure that variable
 - [functions in Terraform](https://developer.hashicorp.com/terraform/language/functions/filemd5)
 
 Used etag to tag uploaded files for tracking
+
+### Terraform Locals
+
+- https://developer.hashicorp.com/terraform/language/values/locals
+
+### Terraform Data Sources
+
+- [Data Sources](https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-sources)
