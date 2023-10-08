@@ -234,3 +234,4 @@ Used etag to tag uploaded files for tracking
 - [Resource Lifecyce](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
 - [HereDocs]https://developer.hashicorp.com/terraform/language/expressions/strings
 - https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax
+- [For_Each Expression](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)

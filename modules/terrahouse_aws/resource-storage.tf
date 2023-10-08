@@ -77,3 +77,16 @@ resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
 resource "terraform_data" "content_version" {
   input = var.content_version
 }
+
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset("${path.root}/public/assets","*.{jpeg,png,gif}")
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "assets/${each.key}"
+  source = "${var.assets_path}/${each.key}"
+  #content_type = "text/html"
+  etag = filemd5("${var.assets_path}/${each.key}")
+  lifecycle {
+    replace_triggered_by = [ terraform_data.content_version.output ]
+    ignore_changes = [etag]
+  }
+}
