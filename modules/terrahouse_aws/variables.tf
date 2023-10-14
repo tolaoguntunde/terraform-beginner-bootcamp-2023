@@ -21,25 +21,25 @@ variable "s3_bucket_name" {
   # }
 }
 
-variable "index_html_filepath" {
-  type        = string
-  description = "The file path to the index.html file"
-  # default     = "path/to/your/index.html"
-  validation {
-    condition     = can(file(var.index_html_filepath))
-    error_message = "The specified index.html file path does not exist."
-  }
-}
+# variable "index_html_filepath" {
+#   type        = string
+#   description = "The file path to the index.html file"
+#   # default     = "path/to/your/index.html"
+#   validation {
+#     condition     = can(file(var.index_html_filepath))
+#     error_message = "The specified index.html file path does not exist."
+#   }
+# }
 
-variable "error_html_filepath" {
-  type        = string
-  description = "The file path to the index.html file"
-  # default     = "path/to/your/index.html"
-  validation {
-    condition     = can(file(var.error_html_filepath))
-    error_message = "The specified index.html file path does not exist."
-  }
-}
+# variable "error_html_filepath" {
+#   type        = string
+#   description = "The file path to the index.html file"
+#   # default     = "path/to/your/index.html"
+#   validation {
+#     condition     = can(file(var.error_html_filepath))
+#     error_message = "The specified index.html file path does not exist."
+#   }
+# }
 
 variable "content_version" {
   type        = number
@@ -53,7 +53,7 @@ variable "content_version" {
 }
 
 
-variable "assets_path" {
-  description = "Path to asset folder"
-  type = string
-}
+# variable "assets_path" {
+#   description = "Path to asset folder"
+#   type = string
+# }
