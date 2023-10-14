@@ -5,6 +5,7 @@ resource "aws_s3_bucket" "website_bucket" {
   bucket = var.s3_bucket_name
   tags = {
             UserUuid = var.user_uuid
+            Hello = "world"
   }
 
 }
@@ -61,12 +62,12 @@ resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
             },
             "Action" = "s3:GetObject",
             "Resource" = "arn:aws:s3:::${aws_s3_bucket.website_bucket.id}/*",
-            "Condition" = {
-                "StringEquals"= {
+            # "Condition" = {
+            #     "StringEquals"= {
                     
-                    "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"
-                }
-            }
+            #         "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"
+            #     }
+            # }
         }
     
 })

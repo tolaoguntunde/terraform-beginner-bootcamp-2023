@@ -19,9 +19,15 @@
 
 # }
 
-# terraform {
-  
-# }
+
+terraform {
+  cloud {
+    organization = "ExamProSerah"
+    workspaces {
+      name = "terraform-cloud"
+    }
+  }
+}
 
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
