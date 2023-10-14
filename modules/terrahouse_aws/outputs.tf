@@ -11,6 +11,6 @@ output "website_endpoint" {
 #   value = aws_cloudfront_distribution.s3_distribution.domain_name
 # }
 
-output "root_path" {
-  value = local.root_path 
-}
+# output "root_path" {
+#   value = local.root_path 
+# }
