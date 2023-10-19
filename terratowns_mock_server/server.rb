@@ -7,9 +7,16 @@ $home = {}
 
 class Home
   include ActiveModel::Validations
+
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
-  validates :town, presence: true
+  validates :town, presence: true, inclusion: { in: [
+    'melomaniac-mansion',
+    'cooker-cove',
+    'video-valley',
+    'the-nomad-pad',
+    'cooker-cove'
+  ] }
   validates :name, presence: true
   validates :description, presence: true
   validates :domain_name, 
@@ -40,11 +47,11 @@ class TerraTownsMockServer < Sinatra::Base
   end
 
   def x_access_code
-    '9b49b3fb-b8e9-483c-b703-97ba88eef8e0'
+   return '9b49b3fb-b8e9-483c-b703-97ba88eef8e0'
   end
 
   def x_user_uuid
-    'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
+   return 'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
   end
 
   def find_user_by_bearer_token

@@ -235,3 +235,39 @@ Used etag to tag uploaded files for tracking
 - [HereDocs]https://developer.hashicorp.com/terraform/language/expressions/strings
 - https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax
 - [For_Each Expression](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
+### Bundler
+- Bundler is a package manager for Ruby
+
+### Gems
+- create a gemsfile and define your gems in it
+```rb
+source "https://rubygems.org"
+
+gem 'sinatra'
+gem 'rake'
+gem 'pry'
+gem 'puma'
+gem 'activerecord'
+```
+Then run the bundle install command
+A Gemfile.lock file will be created to lock the gem version being use unlike nodejs for javascript which is nodemodules
+
+### Executing ruby scripts in the context of bundler
+
+We have to use `bundle exec` to tell future ruby scripts to use the gems we installed
+
+### Sinatra
+
+Sinatra is micro web-framework for ruby to build web-apps
+
+It is great for mock or development server
+Https://sinatrarb.com/
+
+## Terratowns Mock Server
+
+### Running the web server
+
+```rb
+bundle install 
+bundle exec ruby server.rb
+```
