@@ -1,0 +1,47 @@
+# https://servian.dev/terraform-local-providers-and-registry-mirror-configuration-b963117dfffa
+
+# #! /usr/bin/bash
+# PROJECT_ROOT="/workspace/terraform-beginner-bootcamp-2023"
+# PLUGIN_DIR= "/home/gitpod/.terraform.d/plugins/local.providers/local/terratowns/1.0.0"
+# PLUGIN_NAME= "terraform-provider-terratowns_v1.0.0"
+
+# cd "$PROJECT_ROOT/terraform-provider-terratowns"
+# cp "$PROJECT_ROOT/terraformrc /home/gitpod/.terrformrc"
+# rm -rf "/home/gitpod/.terraform.d/plugins"
+# rm -rf "$PROJECT_ROOT/.terraform"
+# rm -rf "$PROJECT_ROOT/.terraform.lock.hcl"
+# go build -o "$PLUGIN_NAME"
+# mkdir -p "$PLUGIN_DIR/x86_64/"
+# mkdir -p "$PLUGIN_DIR/linux_amd64/"
+# cp "$PLUGIN_NAME" "$PLUGIN_DIR/x86_64"
+# cp "$PLUGIN_NAME" "$PLUGIN_DIR/linux_amd64"
+
+
+#!/bin/bash
+
+# Define the project root directory
+# PROJECT_ROOT="/path/to/your/project"
+
+PLUGIN_DIR="$HOME/.terraform.d/plugins/local.providers/local/terratowns/1.0.0"
+PLUGIN_NAME="terraform-provider-terratowns_v1.0.0"
+
+# Change to the provider's source code directory
+cd "$PROJECT_ROOT/terraform-provider-terratowns"
+
+# Copy your custom Terraform configuration (terraformrc)
+cp "$PROJECT_ROOT/terraformrc" "$HOME/.terraformrc"
+
+# Clean up any previous Terraform state
+rm -rf "$PROJECT_ROOT/.terraform"
+rm -rf "$PROJECT_ROOT/.terraform.lock.hcl"
+rm -rf "/home/gitpod/.terraform.d/plugins"
+# Build the custom provider and specify the output file
+go build -o "$PROJECT_ROOT/$PLUGIN_NAME"
+
+# Create the necessary directories in the target directory
+mkdir -p "$PLUGIN_DIR/x86_64"
+mkdir -p "$PLUGIN_DIR/linux_amd64"
+
+# Copy the provider binary to the target directories
+cp "$PROJECT_ROOT/$PLUGIN_NAME" "$PLUGIN_DIR/x86_64/"
+cp "$PROJECT_ROOT/$PLUGIN_NAME" "$PLUGIN_DIR/linux_amd64/"

@@ -1,34 +1,25 @@
-# This is my first commit
-# This is my second commit
-#This is my third test
-
-
-# resource "random_string" "bucket_name" {
-#   length           = 16
-#   upper            = false
-#   special          = false
-# }
-
-# resource "aws_s3_bucket" "website_bucket" {
-
-#   #https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
-#   bucket = var.s3_bucket_name
-#   tags = {
-#             UserUuid = var.user_uuid
-#   }
-
-# }
-
-# terraform {
-  
-# }
-
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
-  user_uuid = var.user_uuid
-  s3_bucket_name = var.s3_bucket_name
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version = var.content_version
-  assets_path = var.assets_path
+terraform {
+  required_providers {
+    terratowns = {
+      source = "local.providers/local/terratowns"
+      version = "1.0.0"
+    }
+  }
 }
+
+provider "terratowns" {
+  endpoint = "http://localhost:4567"
+  user_uuid = "e328f4ab-b99f-421c-84c9-4ccea042c7d1"
+  token = "9b49b3fb-b8e9-483c-b703-97ba88eef8e0"
+  
+}
+
+# module "terrahouse_aws" {
+#   source = "./modules/terrahouse_aws"
+#   user_uuid = var.user_uuid
+#   s3_bucket_name = var.s3_bucket_name
+#   index_html_filepath = var.index_html_filepath
+#   error_html_filepath = var.error_html_filepath
+#   content_version = var.content_version
+#   assets_path = var.assets_path
+# }
