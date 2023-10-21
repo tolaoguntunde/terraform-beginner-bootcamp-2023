@@ -100,12 +100,12 @@ class TerraTownsMockServer < Sinatra::Base
     puts "town #{town}"
 
     home = Home.new
-    #home.town = town
-    home.town = $home[:town]
-    home.domain_name = $home[:domain_name]
+    home.town = town
+    #home.town = $home[:town]
+    #home.domain_name = $home[:domain_name]
     home.name = name
     home.description = description
-    # home.domain_name = domain_name
+    home.domain_name = domain_name
     home.content_version = content_version
     # binding.pry
     
@@ -167,11 +167,12 @@ class TerraTownsMockServer < Sinatra::Base
 
     home = Home.new
     home.town = $home[:town]
+    home.domain_name = $home[:domain_name]
     home.name = name
     home.description = description
     home.domain_name = domain_name
     home.content_version = content_version
-
+    binding.pry
     unless home.valid?
       error 422, home.errors.messages.to_json
     end
